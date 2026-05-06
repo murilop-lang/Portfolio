@@ -2,123 +2,107 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Murilo Designer</title> | Portfólio</title>
-<meta name="description"
-content="Portfólio de Murilo Designer - Criação de posts profissionais para instagram.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Murilo Designer</title>
 
 <style>
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    background: #0f0f0f;
     color: white;
-}
-
-/* ANIMAÇÃO */
-@keyframes subir {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    font-family: Arial;
 }
 
 /* HEADER */
 header {
     text-align: center;
-    padding: 70px 20px;
-    animation: subir 1s ease;
+    padding: 60px 20px;
 }
 
-header h1 {
-    font-size: 48px;
+h1 {
+    font-size: 42px;
     margin: 0;
 }
 
-header p {
+p {
     color: #aaa;
 }
 
-/* LINKS */
-.links {
-    margin-top: 15px;
-}
-
+/* BOTÃO INSTAGRAM */
 .links a {
+    display: inline-block;
+    margin-top: 15px;
     color: #00ff88;
     text-decoration: none;
-    margin: 0 10px;
-    font-weight: 600;
+    border: 1px solid #00ff88;
+    padding: 10px 20px;
+    border-radius: 8px;
     transition: 0.3s;
 }
 
 .links a:hover {
-    color: white;
+    background: #00ff88;
+    color: black;
 }
 
 /* SOBRE */
 .sobre {
     text-align: center;
-    max-width: 600px;
-    margin: auto;
-    color: #ccc;
-    animation: subir 1.2s ease;
+    padding: 20px;
 }
 
-/* GRID */
+/* TRABALHOS */
 .trabalhos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
-/* CARD */
 .card {
-    background: #1a1a1a;
-    border-radius: 15px;
     overflow: hidden;
-    transition: 0.3s;
-    animation: subir 1.3s ease;
+    border-radius: 12px;
+    margin: 10px;
 }
 
-/* IMAGEM CORRIGIDA (SEM DISTORCER) */
 .card img {
-    width: 100%;
-    height: auto;
+    width: 280px;
+    transition: 0.4s;
 }
 
-/* HOVER */
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px #00ff88;
+.card img:hover {
+    transform: scale(1.08);
+    filter: brightness(1.1);
 }
 
-/* BOTÃO */
-.contato {
-    text-align: center;
-    margin: 60px;
-    animation: subir 1.5s ease;
-}
-
-.botao {
-    padding: 14px 28px;
-    background: #00ff88;
-    color: black;
-    border-radius: 30px;
+/* BOTÃO WHATSAPP FLUTUANTE */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
+    box-shadow: 0 0 15px rgba(0,255,100,0.5);
     transition: 0.3s;
 }
 
-.botao:hover {
-    background: #00cc6a;
-    transform: scale(1.05);
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    .card img {
+        width: 90%;
+    }
 }
 </style>
 </head>
@@ -130,7 +114,9 @@ header p {
     <p>Design que chama atenção e gera resultado 🚀</p>
 
     <div class="links">
-        <a href="https://www.instagram.com/mv.designbr/" target="_blank">Instagram</a>
+        <a href="https://www.instagram.com/mv.designbr/" target="_blank">
+            Ver Instagram
+        </a>
     </div>
 </header>
 
@@ -144,19 +130,19 @@ header p {
     <div class="card">
         <img src="imagens/foto1.jpeg">
     </div>
+
     <div class="card">
         <img src="imagens/foto2.jpeg">
     </div>
+
     <div class="card">
         <img src="imagens/foto3.jpeg">
     </div>
 </section>
 
-<div class="contato">
-    <a class="botao" href="https://wa.me/5511911436847" target="_blank">
-        Fale comigo no WhatsApp
-    </a>
-</div>
+<a class="whatsapp" href="https://wa.me/5511911436847" target="_blank">
+    Fale comigo
+</a>
 
 </body>
 </html>
