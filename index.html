@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Murilo Designer</title> | Portfólio</title>
+<meta name="description"
+content="Portfólio de Murilo Designer - Criação de posts profissionais para instagram.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+    color: white;
+}
+
+/* ANIMAÇÃO */
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 70px 20px;
+    animation: subir 1s ease;
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+header p {
+    color: #aaa;
+}
+
+/* LINKS */
+.links {
+    margin-top: 15px;
+}
+
+.links a {
+    color: #00ff88;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.links a:hover {
+    color: white;
+}
+
+/* SOBRE */
+.sobre {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    color: #ccc;
+    animation: subir 1.2s ease;
+}
+
+/* GRID */
+.trabalhos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+/* CARD */
+.card {
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    animation: subir 1.3s ease;
+}
+
+/* IMAGEM CORRIGIDA (SEM DISTORCER) */
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+/* HOVER */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #00ff88;
+}
+
+/* BOTÃO */
+.contato {
+    text-align: center;
+    margin: 60px;
+    animation: subir 1.5s ease;
+}
+
+.botao {
+    padding: 14px 28px;
+    background: #00ff88;
+    color: black;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background: #00cc6a;
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Murilo Designer</h1>
+    <p>Design que chama atenção e gera resultado 🚀</p>
+
+    <div class="links">
+        <a href="https://www.instagram.com/mv.designbr/" target="_blank">Instagram</a>
+    </div>
+</header>
+
+<section class="sobre">
+    <p>
+        Eu ajudo empresas e criadores a crescer no Instagram com posts profissionais e criativos.
+    </p>
+</section>
+
+<section class="trabalhos">
+    <div class="card">
+        <img src="imagens/foto1.jpg">
+    </div>
+    <div class="card">
+        <img src="imagens/foto2.jpg">
+    </div>
+    <div class="card">
+        <img src="imagens/foto3.jpg">
+    </div>
+</section>
+
+<div class="contato">
+    <a class="botao" href="https://wa.me/5511911436847" target="_blank">
+        Fale comigo no WhatsApp
+    </a>
+</div>
+
+</body>
+</html>
