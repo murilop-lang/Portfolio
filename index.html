@@ -8,21 +8,25 @@
 <style>
 body {
     margin: 0;
+    font-family: Arial;
     background: #0f0f0f;
     color: white;
-    font-family: Arial;
 }
 
-/* ANIMAÇÃO */
-.reveal {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: 0.6s;
+/* MENU */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #111;
+    position: sticky;
+    top: 0;
 }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
 }
 
 /* HEADER */
@@ -35,169 +39,118 @@ h1 {
     font-size: 45px;
 }
 
-p {
-    color: #aaa;
-}
-
-/* BOTÃO INSTAGRAM */
-.links a {
-    display: inline-block;
-    margin-top: 20px;
-    color: #00ff88;
-    text-decoration: none;
-    border: 1px solid #00ff88;
-    padding: 12px 25px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.links a:hover {
+.botao {
     background: #00ff88;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
     color: black;
 }
 
-/* SOBRE */
-.sobre {
+/* SEÇÕES */
+section {
+    padding: 50px 20px;
     text-align: center;
-    padding: 20px;
 }
 
-/* GRID */
+/* SERVIÇOS */
+.servicos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.servico {
+    background: #1a1a1a;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+}
+
+/* PORTFÓLIO */
 .trabalhos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    padding: 40px;
+    gap: 15px;
 }
 
-/* CARD */
-.card {
-    border-radius: 15px;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 0 25px #00ff88;
-}
-
-.card img {
+.trabalhos img {
     width: 100%;
-    height: auto;
-    display: block;
+    border-radius: 10px;
 }
 
-/* LIGHTBOX (IMAGEM GRANDE) */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
+/* CONTATO */
+.contato a {
+    display: inline-block;
+    margin-top: 20px;
 }
 
-.lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-}
-
-.lightbox.active {
-    display: flex;
-}
-
-/* BOTÃO WHATS */
+/* WHATSAPP FIXO */
 .whatsapp {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background: #25D366;
-    color: white;
-    padding: 15px 22px;
+    padding: 15px;
     border-radius: 50px;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 0 20px rgba(0,255,100,0.6);
-}
-
-/* RESPONSIVO */
-@media (max-width: 600px) {
-    h1 { font-size: 30px; }
 }
 </style>
 </head>
 
 <body>
 
-<header class="reveal">
-    <h1>Murilo Designer</h1>
-    <p>Design que chama atenção e gera resultado 🚀</p>
-
-    <div class="links">
-        <a href="https://www.instagram.com/mv.designbr/" target="_blank">
-            Ver Instagram
-        </a>
+<nav>
+    <div>Murilo Designer</div>
+    <div>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
     </div>
+</nav>
+
+<header>
+    <h1>Design que chama atenção e gera resultado</h1>
+    <p>Posts profissionais para Instagram</p>
+    <a class="botao" href="https://wa.me/5511911436847">Fale comigo</a>
 </header>
 
-<section class="sobre reveal">
-    <p>
-        Eu ajudo empresas e criadores a crescer no Instagram com posts profissionais e criativos.
-    </p>
+<section id="sobre">
+    <h2>Sobre</h2>
+    <p>Eu ajudo empresas e criadores a crescer no Instagram com designs profissionais.</p>
 </section>
 
-<section class="trabalhos">
-
-    <div class="card reveal" onclick="abrir(this)">
-        <img src="imagens/foto1.jpeg">
+<section id="servicos">
+    <h2>Serviços</h2>
+    <div class="servicos">
+        <div class="servico">Posts para Instagram</div>
+        <div class="servico">Stories</div>
+        <div class="servico">Flyers</div>
     </div>
-
-    <div class="card reveal" onclick="abrir(this)">
-        <img src="imagens/foto2.jpeg">
-    </div>
-
-    <div class="card reveal" onclick="abrir(this)">
-        <img src="imagens/foto3.jpeg">
-    </div>
-
 </section>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="fechar()">
-    <img id="imgGrande">
-</div>
+<section id="portfolio">
+    <h2>Portfólio</h2>
+    <div class="trabalhos">
+        <img src="foto1.jpeg">
+        <img src="foto2.jpeg">
+        <img src="foto3.jpeg">
+    </div>
+</section>
 
-<a class="whatsapp" href="https://wa.me/5511911436847" target="_blank">
-    Fale comigo
+<section id="contato" class="contato">
+    <h2>Contato</h2>
+    <a class="botao" href="https://wa.me/5511911436847">
+        Fale comigo no WhatsApp
+    </a>
+</section>
+
+<a class="whatsapp" href="https://wa.me/5511911436847">
+    WhatsApp
 </a>
-
-<script>
-/* ANIMAÇÃO AO ROLAR */
-window.addEventListener("scroll", () => {
-    document.querySelectorAll(".reveal").forEach(el => {
-        let top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight - 100) {
-            el.classList.add("active");
-        }
-    });
-});
-
-/* LIGHTBOX */
-function abrir(el) {
-    document.getElementById("lightbox").classList.add("active");
-    document.getElementById("imgGrande").src = el.querySelector("img").src;
-}
-
-function fechar() {
-    document.getElementById("lightbox").classList.remove("active");
-}
-</script>
 
 </body>
 </html>
